@@ -1,21 +1,24 @@
 def main():
+    # making sure the values inputted are the ones required
     difficulty = input("difficult or casual? ")
-    players = input("multiplayer or singleplayer? ")
+    if not (difficulty == "difficult" or difficulty == "casual"):
+        print("please enter a valid difficulty")
+        return
 
-    if difficulty == "difficult":
-        if players == "multiplayer":
+    players = input("multiplayer or singleplayer? ")
+    if not(players == "mutliplayer" or players == "singleplayer"):
+        print("please enter a valid number of players")
+        return
+
+# return values
+    if difficulty == "difficult" and players == "multiplayer":
             recommend("poker")
-        elif players == "singleplayer":
+    elif difficulty == "difficult" and players == "singleplayer":
             recommend("klondlike")
-        else:
-            print("please enter a valid input.")
-    else:
-        if players == "multiplayer":
+    elif difficulty == "casual" and players == "multiplayer":
             recommend("hearts")
-        elif players == "singleplayer":
+    elif difficulty == "casual" and players == "singleplayer":
             recommend("clock")
-        else:
-            print("please enter a valid input")
 
 def recommend(game):
     print("you might like", game)
