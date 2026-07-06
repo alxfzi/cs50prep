@@ -1,0 +1,21 @@
+WORDS = {"Pair": 4, "Hair": 4, "Chair": 5, "Graphic":7}
+
+def main():
+    print("welcome to spelling bee!")
+    print("your letters are: a i p c r h g")
+
+    while len(WORDS) > 0:
+        print(f"{len(WORDS)} words left!")
+        guess = input("Guess a word!")
+
+        if guess in WORDS.keys():
+            points = WORDS.pop(guess)
+            print(f"Good job! You scored {points} points")
+
+        if guess == "Graphic":
+            points = WORDS.clear()
+            print("You have won!")
+
+main()
+    
+print("Thats the game!")
