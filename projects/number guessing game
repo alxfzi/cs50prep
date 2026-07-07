@@ -1,0 +1,33 @@
+import random
+
+print("hello and welcome to the number guessing game! you have 7 chances to guess the number.")
+
+low = int(input("enter the lower bound: "))
+high = int(input("enter the lower bound: "))
+
+print(f"you have 7 chances to guess the number between {low} and {high}. lets start.")
+
+num = random.randint(low, high)
+
+# total allowed chances
+ch = 7
+
+# guess counter
+gc = 0
+
+while gc < ch:
+    gc += 1
+    guess = int(input("enter your guess: "))
+
+    if guess == num:
+        print(f" correct! the number is {num}. you guessed it in {gc} attempts.")
+        break
+
+    elif gc >= ch and guess != num:
+        print(f"sorry! the number was {num}. better luck next time!")
+    
+    elif guess > num:
+        print("too high! try a lower number.")
+
+    elif guess < num:
+        print("too low! try a higher number!")
